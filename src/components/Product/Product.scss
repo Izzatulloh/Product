@@ -3,7 +3,22 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 50px;
-
+  @include media(1040){
+    max-width: 750px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: repeat(2,1fr);
+  }
+  @include media(680){
+    max-width: 350px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
   &__item {
     display: flex;
     background: linear-gradient(0deg,
@@ -16,11 +31,41 @@
     padding: 16px;
     max-width: 100%;
     width: max-content;
+    @include media(900){
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      max-width: 400px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      img{
+        max-width: 250px;
+        height: 250px;
+        width: 100%;
+      }
+   
+    }
+    @include media(350){
+      img{
+        max-width: 220px;
+        height: 220px;
+        width: 100%;
+      }
+    }
     &-info {
       display: flex;
       flex-direction: column;
       margin-left: 50px;
       gap: 15px;
+      @include media(900){
+        margin-left: 0;
+        gap: 10px;
+      }
+      @include media(300){
+        gap: 8px;
+      }
+      
     }
 
     &-img {
@@ -41,8 +86,11 @@
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
         0px 1px 3px 1px rgba(0, 0, 0, 0.15);
       border-radius: 16px;
-      padding: 16px;
+      padding: 8px 15px;
       margin: 30px 0;
+      @include media(900){
+        margin: 15px 0;
+      }
     }
   }
 
@@ -65,7 +113,12 @@
       height: 250px;
       object-fit: cover;
       object-position: center;
+      @include media(1040){
+        width: 220px;
+        height: 220px;
+      }
     }
+   
 
     &-title,
     &-brand {
@@ -75,25 +128,39 @@
 
     &-stock {
       font-size: 20px;
+      @include media(900){
+        font-size: 17px;
+      }
+      @include media(350){
+        font-size: 15px;
+      }
     }
 
     &-item {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+    
     }
 
     &-price {
       font-weight: 700;
       font-size: 20px;
+      @include media(450){
+        font-size: 17px; 
+      }
     }
 
     &-img {
       width: 40px !important;
       height: 40px !important;
       margin: 0 !important;
+      @include media(450){
+        width: 30px !important;
+        height: 30px !important;
+      }
     }
     &-info{
- 
       color: red;
       font-size: 20px;
       background: linear-gradient(0deg,
@@ -113,8 +180,17 @@
     margin-top: 30px;
     justify-content: center;
     gap: 30px;
-
+    @include media(680){
+      gap: 15px;
+      display: flex;
+      flex-shrink: 0;
+      overflow-x: scroll;
+      padding: 10px;
+      justify-content: start;
+      margin-top: 10px;
+    }
     &-btn {
+      display: block;
       background: linear-gradient(0deg,
           rgba(103, 80, 164, 0.05),
           rgba(103, 80, 164, 0.05)),
@@ -125,7 +201,6 @@
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
         0px 1px 3px 1px rgba(0, 0, 0, 0.15);
       border-radius: 8px;
-
       .active {
         background-color: red;
       }

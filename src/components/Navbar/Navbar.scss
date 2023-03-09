@@ -1,12 +1,29 @@
 .nav{
-    margin-top: 30px;
+   margin-top: 15px;
     &__list{
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
         justify-content: center;
+        @include media(760){
+          display: flex;
+          flex-wrap: nowrap;
+          gap: 15px;
+          margin-top: 15px;
+          overflow: hidden;
+          overflow-x: auto;
+          justify-content: start;
+          padding: 15px;
+          margin: 0;
+        }
     }
     &__btn{
+      @include media(760){
+        flex-shrink: 0;
+        width: max-content;
+      
+      }
+      display: block;
         background: linear-gradient(
             0deg,
             rgba(103, 80, 164, 0.05),
